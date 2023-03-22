@@ -1,12 +1,23 @@
 import "./SearchForm.scss";
-import { Form, useNavigation, useSubmit } from "react-router-dom";
+import {
+  Form,
+  useNavigation,
+  useSubmit,
+  useSearchParams,
+} from "react-router-dom";
 import { useEffect } from "react";
 
 export const SearchForm = () => {
   const navigation = useNavigation();
   const submit = useSubmit();
 
-  const searchCharacters = "";
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchCharacters = searchParams.get("name") ?? "";
+
+  const search = async () => {
+    searchParams.set("name", searchCharacters);
+    setSearchParams(searchParams);
+  };
 
   const searching =
     navigation.location &&
@@ -20,7 +31,12 @@ export const SearchForm = () => {
     <>
       <section className="search">
         <div className="container">
-          <Form className="search__form" id="search-form" role="search">
+          <Form
+            className="search__form"
+            id="search-form"
+            onSubmit={search}
+            role="search"
+          >
             <input
               id="search"
               className={searching ? "loading" : ""}
