@@ -1,0 +1,53 @@
+@import "./Variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  @include fontStyle;
+  background: $light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1068px;
+  padding: 0 24px;
+  margin: 0 auto;
+}

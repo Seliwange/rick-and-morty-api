@@ -1,0 +1,17 @@
+.logo {
+  margin-top: 86px;
+  margin-bottom: 16px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: fit-content;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    margin-bottom: 32px;
+    margin-top: 92px;
+  }
+}
